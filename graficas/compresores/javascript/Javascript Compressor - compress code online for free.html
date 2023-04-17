@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0032)http://javascriptcompressor.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=7"><meta name="robots" content="index,follow">
+<meta name="GENERATOR" content="CommunityServer 2008 (Build: 30417.1769)">
+<link rel="shortcut icon" type="image/ico" href="http://javascriptcompressor.com/favicon.png">
+
+        
+        <style type="text/css"> body { font-size: 84%; } </style>
+        <link rel="stylesheet" href="./Javascript Compressor - compress code online for free_files/Common.css" type="text/css" media="screen,print">
+        <link rel="stylesheet" href="./Javascript Compressor - compress code online for free_files/common_print.css" type="text/css" media="print">
+        
+        <link rel="stylesheet" href="./Javascript Compressor - compress code online for free_files/DynamicStyle.css" type="text/css" media="screen">
+ 
+        <link rel="stylesheet" href="./Javascript Compressor - compress code online for free_files/javascriptcompressor.css" type="text/css" media="screen">
+
+   
+
+
+	<script type="text/javascript" src="./Javascript Compressor - compress code online for free_files/my.js.descarga"></script>
+	<script src="./Javascript Compressor - compress code online for free_files/base2-load.js.descarga" type="text/javascript"></script>
+	<script src="./Javascript Compressor - compress code online for free_files/Packer.js.descarga" type="text/javascript"></script>
+	<script src="./Javascript Compressor - compress code online for free_files/Words.js.descarga" type="text/javascript"></script>
+	<script src="./Javascript Compressor - compress code online for free_files/bindings.js.descarga" type="text/javascript"></script>
+<title>
+	Javascript Compressor - compress code online for free
+</title><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+    border: 1px solid #c8c7cc !important;
+    border-radius: 11px !important;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.dark-mode .iw-contextMenu,
+.TnITTtw-dark-mode.iw-contextMenu,
+.TnITTtw-dark-mode .iw-contextMenu {
+    border-color: #747473 !important;
+}
+
+.iw-cm-menu {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: visible !important;
+}
+
+.dark-mode .iw-cm-menu,
+.TnITTtw-dark-mode.iw-cm-menu,
+.TnITTtw-dark-mode .iw-cm-menu {
+    background: #525251 !important;
+    color: #FFF !important;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    list-style: none !important;
+    padding: 10px !important;
+    padding-right: 20px !important;
+    border-bottom: 1px solid #c8c7cc !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    border-radius: 0 !important;
+    display: block !important;
+}
+
+.dark-mode .iw-cm-menu li, .TnITTtw-dark-mode .iw-cm-menu li {
+    border-bottom-color: #747473 !important;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px !important;
+    border-top-right-radius: 11px !important;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px !important;
+    border-bottom-right-radius: 11px !important;
+    border-bottom: none !important;
+}
+
+.iw-mOverlay {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0px !important;
+    left: 0px !important;
+    background: #FFF !important;
+    opacity: .5 !important;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3 !important;
+    cursor: default !important;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6 !important;
+}
+
+.dark-mode .iw-mSelected, .TnITTtw-dark-mode .iw-mSelected {
+    background-color: #676766 !important;
+}
+
+.iw-cm-arrow-right {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 5px solid #000 !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 50% !important;
+    margin-top: -5px !important;
+}
+
+.dark-mode .iw-cm-arrow-right, .TnITTtw-dark-mode .iw-cm-arrow-right {
+    border-left-color: #FFF !important;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style></head>
+	<body id="packer">
+		<form name="aspnetForm" method="post" action="http://javascriptcompressor.com/default.aspx" id="aspnetForm">
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+</div>
+						
+
+			
+
+		    
+		        <div id="CommonHeader">
+		            <div class="Common">
+		                <div id="CommonHeaderTitleArea">
+
+							<div id="logo" class="cursor">
+							<a href="http://javascriptcompressor.com/">
+									<h1>Javascript Compressor</h1>
+								</a>
+							</div>
+						
+		                </div>
+		                <div id="CommonHeaderUserArea">
+		                    <table cellpadding="0" cellspacing="0" border="0"><tbody><tr valign="top"><td>
+                                <div id="CommonHeaderUserContent">
+                                    <div id="CommonHeaderUserWelcome">
+                                        
+     
+
+
+                                    </div>
+                                </div>
+                                <div id="CommonHeaderUserRoundBottom"><div class="r1"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div></div>
+                            </td></tr></tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <div id="CommonNavigation">
+                    <div class="Common"><div class="Inner">
+                        <ul>
+                                <li><a class="Selected" href="http://javascriptcompressor.com/">Compress JavaScript</a></li>
+                                
+
+                            </ul>
+                        <div style="clear: both;"></div>
+                     </div></div>
+                </div>
+                <div id="CommonNavigationShadow">
+                    
+                </div>
+		    
+                        
+            <div class="Common">
+           
+                <div id="CommonSearch">
+                    
+                        <br>
+                        <br>
+                        <br>
+                            
+                    
+                </div>
+                <div id="CommonTitle">
+                    
+                </div>
+                <div style="clear: both;"></div>
+			    <div id="CommonSidebarRight">
+			        
+    <div class="CommonSidebar">
+    
+
+        
+                <div class="CommonContentBox Highlighted2">
+                </div>
+            
+        
+         
+
+<div class="ad">
+<script type="text/javascript"><!--
+var ieo = ("OpOuOOOb-OO7O5O4O3O90O046O558O9OO39O7");
+google_ad_client = ieo.replace(/o/gi, "");
+/* 300x250, created 6/23/08 */
+google_ad_slot = "9553883363";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Javascript Compressor - compress code online for free_files/f.txt">
+</script>
+</div>
+
+
+<hr>
+
+         
+
+<div class="ad">
+<script type="text/javascript"><!--
+var ieo = ("OpOuOOOb-OO7O5O4O3O90O046O558O9OO39O7");
+google_ad_client = ieo.replace(/o/gi, "");
+/* 300x250, created 6/23/08 */
+google_ad_slot = "9553883363";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Javascript Compressor - compress code online for free_files/f.txt">
+</script>
+</div>
+
+   </div>	
+
+			    </div>
+                <div id="CommonSidebarLeft">
+				    
+				</div>
+			    <div id="CommonContent"><div id="CommonContentInner">
+<div class="packerpage">
+
+<div class="content">
+<h1>Online Javascript compressor</h1>
+<p>
+Compress and obfuscate Javascript code online completely free using this compressor.
+</p>
+
+ <hr class="short">
+ 
+  
+	<p class="r">
+		<a href="http://javascriptcompressor.com/content/HowtouseJavascriptCompressor.aspx">How to use?</a>
+	</p>
+	
+	<p>
+		<label for="input">Paste your code:</label>
+	  <br>
+   <textarea id="input" name="input" rows="12" cols="120" spellcheck="false"></textarea></p>
+  <p class="r" id="controls">
+   <label for="base62">Base62 encode
+	<input type="checkbox" id="base62" name="base62" value="1"></label>
+   <label for="shrink">Shrink variables
+    <input type="checkbox" id="shrink" name="shrink" value="1"></label>
+  </p>
+  
+  <p class="form-buttons" id="input-buttons">
+
+   <button type="button" id="pack-script">Compress</button>
+   <button type="button" id="clear-all">Clear</button>
+  </p>
+  <p><label class="copy">Copy:</label>
+   <textarea id="output" name="output" rows="12" cols="110" readonly="readonly" spellcheck="false" style="margin: 0px; width: 616px; height: 201px;"></textarea></p>
+
+  <p id="message" class="">compression ratio: 660/1096=0.602</p>
+  <p class="form-buttons" id="output-buttons">
+   <button type="button" id="decode-script" disabled="">Decode</button>
+  </p>
+  
+  <fieldset class="hidden">
+   <input type="hidden" name="command" value="">
+   <input type="hidden" name="filename" value="">
+
+   <input type="hidden" name="filetype" value="">
+   
+   <button type="submit" id="saveScript" disabled="disabled">Save</button>
+     <input type="file" id="uploadScript" name="upload" disabled="true">
+   <button type="button" id="loadScript">Load</button>
+   </fieldset>
+ 
+</div>
+
+<div class="ad">
+<script async="" src="./Javascript Compressor - compress code online for free_files/f(1).txt"></script>
+<!-- Subscene - 728 Above -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7543900465589397" data-ad-slot="7985592746"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div id="footer">
+	Version 3.0, Algorithm author: <a href="http://dean.edwards.name/packer/">Dean Edwards</a>
+</div>
+
+</div>
+</div></div>
+			    <div style="clear: both;"></div>
+			    
+			    
+	                    
+	                
+            </div></form>
+                
+ 
+ 
+
+
+            <div id="CommonFooter">
+                <div class="Common">
+					<div id="footer">
+						<div>
+							©2004-2010 Javascript Compressor - Version 2.0
+						</div>
+
+							<div id="lunarmediaNetwork">
+								A <a href="http://lunarmedia.com/">Lunarmedia</a> website.
+							</div>
+						</div>
+
+			
+			
+                    
+                        
+                	    
+                        
+
+                        
+                		
+                    
+
+
+
+
+                 </div>
+            </div>
+		
+<script type="text/javascript">
+// <![CDATA[
+Telligent_Modal.Configure('/utility/loading.htm',['CommonModal'],['CommonModalTitle'],['CommonModalClose'],['CommonModalContent'],['CommonModalFooter'],['CommonModalResize'],['CommonModalMask'],100,false);
+// ]]>
+</script><script type="text/javascript">
+<!--
+function KeyDownHandlerctl00_sr_ctl00_ctl00_TitleBarSearchButton(event)
+{
+	if (event.keyCode == 13)
+	{
+		event.returnValue = false;
+		event.cancel = true;
+     __doPostBack('ctl00$sr$ctl00$ctl00$TitleBarSearchButton','')
+   return false;
+	}
+}
+
+//-->
+</script>
+<script src="./Javascript Compressor - compress code online for free_files/urchin.js.descarga" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-340707-4";
+urchinTracker();
+</script>
+		
+	
+
+</body></html>
