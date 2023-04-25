@@ -1,6 +1,6 @@
 c1: hora 
-c2: potencia consumida instantanea [(W)watios]
+c2: potencia consumida [(W)watios] (instantanea)
 c3: energia consumida [(W/h) watios hora]
 c4: energia excedente [(W/h) watios hora]
-c5: potencia producida instantanea [(W)watios] (puede ser 0)
-c6: energia producida [(W/h) watios hora] (puede ser 0)
+c5: potencia producida [(W)watios] (puede ser 0) (instantanea)
+c6: energia producida [(W/h) watios hora] (puede ser 0) (instantanea)

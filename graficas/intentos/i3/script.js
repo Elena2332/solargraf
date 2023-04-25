@@ -1,29 +1,43 @@
 // Datos de la gráfica
-let labels = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
-let consumo = [20, 35, 23, 13, 30, 62, 35, 23, 13, 30, 62, 35, 23, 13, 30, 62, 35, 23, 13, 30, 62, 35, 23, 13, 30, 62, 35, 23, 13,]
-let produccion = [10, 20, 30, 10, 30, 50, 10, 62, 35, 23, 13, 30, 62, 35, 28, 5, 23, 13, 30, 62, 23, 13, 30, 62, 35, 23, 13, 30, 6, 22]
-let excedente = [20, 35, 23, 23, 13, 30, 30, 62, 35, 23, 13, 30, 62, 62, 35, 13, 62, 35, 23, 13, 30, 35, 23, 13, 30, 62, 35, 23, 13, 30, 62]
+let labels = []
+let potencia_consumida = []
+let energia_consumida = []
+let energia_excedente = []
+let potencia_producida = []
+let energia_producida = []
 
 const data = {
   labels: labels,
   datasets: [
     {
-      label: "produccion",
-      data: produccion,
+      label: "potencia consumida",
+      data: potencia_consumida,
       fill: true,
       borderColor: "rgb(119, 201, 11)",
       tension: 0.1
     },{
-      label: "consumo",
-      data: consumo,
+      label: "energia consumida",
+      data: energia_consumida,
       fill: false,
       borderColor: "rgb(205, 22, 62)",
       tension: 0.1
-  },{
-      label: "fugas",
-      data: excedente,
+    },{
+        label: "energia excedente",
+        data: energia_excedente,
+        fill: false,
+        borderColor: "rgb(22, 184, 205)",
+        tension: 0.1
+    },{
+      label: "potencia producida",
+      data: potencia_producida,
       fill: false,
-      borderColor: "rgb(22, 184, 205)",
+      borderColor: "rgb(220, 180, 125)",
+      tension: 0.1
+    },{
+      label: "energia producida",
+      data: energia_producida,
+      fill: false,
+      borderColor: "rgb(220, 180, 125)",
       tension: 0.1
   }]
 };
@@ -58,29 +72,57 @@ const myChart = new Chart(ctx, {
       .then(res => res.text())
         .then(content => {
           let lines = content.split(/\r\n/);
-          lines.forEach(line => lineas.push(line.split(/\t/)));
+          lines.forEach(line => {
+            let lin = line.split(/\t/)
+            if(lin.length == 4)
+            {
+              lin[4] = '0'
+              lin[5] = '0'
+            }
+            lineas.push(lin)
+          })
       });
       return lineas
   }
   // leerFichero('../22_12_31.log')
-  console.log(leerFichero('../22_12_31.log'))
+  // console.log(leerFichero('../22_12_31.log'))
+
+
+  function gestionarArrays()
+  {
+    lineas = leerFichero('../22_12_31.log')
+    console.log(lineas)
+    for (let line in lineas) {
+      this.labels.push(line[0])   // hora
+      this.potencia_consumida.push(line[1])   // potencia consumida
+      this.energia_consumida.push(line[2])   // energia consumida
+      this.energia_excedente.push(line[3])   // energia excedente
+      this.potencia_producida.push(line[4])   // potencia producida
+      this.energia_producida.push(line[5])   // energia producida
+      console.log(line)
+    }
+  }
 
 
 
 ///// actualizar datos
 
   // Función para actualizar los datos de las tres series
-  function actualizarDatos(consumo, excedente, produccion) {
+  function actualizarDatos(potencia_consumida, energia_consumida, energia_excedente,potencia_producida,energia_producida) {
     // Actualizar los datos de las tres series
-    myChart.data.datasets[0].data = consumo;
-    myChart.data.datasets[1].data = excedente;
-    myChart.data.datasets[2].data = produccion;
+    myChart.data.datasets[0].data = potencia_consumida;
+    myChart.data.datasets[1].data = energia_consumida;
+    myChart.data.datasets[2].data = energia_excedente;
+    myChart.data.datasets[3].data = potencia_producida;
+    myChart.data.datasets[4].data = energia_producida;
+
     // Actualizar la gráfica
     myChart.update();
   }
 
   
   function actualizar()
-  {
-    this.actualizarDatos(consumo,excedente,produccion)
+  {    
+    gestionarArrays()
+    actualizarDatos(potencia_consumida, energia_consumida, energia_excedente,potencia_producida,energia_producida)
   }
