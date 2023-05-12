@@ -12,7 +12,7 @@ const data = {
     {
       label: "potencia consumida",
       data: potencia_consumida,
-      fill: true,
+      fill: false,
       borderColor: "rgb(119, 201, 11)",
       tension: 0.1
     },{
@@ -71,17 +71,31 @@ const myChart = new Chart(ctx, {
     fetch(nom_fich)
       .then(res => res.text())
         .then(content => {
-          let lines = content.split(/\r\n/);
-          lines.forEach(line => {
-            let lin = line.split(/\t/)
+          let lines = content.split(/\r\n/);    // array, string lineas del fichero
+          let len = lines.length
+          for(let i=0; i<len ; i++)
+          {
+            let lin = lines[i].split(/\t/)    // array, partes de la linea
             if(lin.length == 4)
             {
               lin[4] = '0'
               lin[5] = '0'
             }
-            lineas.push(lin)
-          })
+            lineas[i] = lin
+            console.log('lin: '+lin)
+          }
+          
+          // lines.forEach(line => {
+          //   let lin = line.split(/\t/)
+          //   if(lin.length == 4)
+          //   {
+          //     lin[4] = '0'
+          //     lin[5] = '0'
+          //   }
+          //   lineas.push(lin)
+          // })
       });
+      console.log('lineas leerFichero: ' +lineas)
       return lineas
   }
   // leerFichero('../22_12_31.log')
@@ -90,20 +104,31 @@ const myChart = new Chart(ctx, {
 
   function gestionarArrays()
   {
-    lineas = leerFichero('../22_12_31.log')
-    console.log(lineas)
-    for (let line in lineas) {
-      this.labels.push(line[0])   // hora
-      this.potencia_consumida.push(line[1])   // potencia consumida
-      this.energia_consumida.push(line[2])   // energia consumida
-      this.energia_excedente.push(line[3])   // energia excedente
-      this.potencia_producida.push(line[4])   // potencia producida
-      this.energia_producida.push(line[5])   // energia producida
-      console.log(line)
-    }
+      lineas = leerFichero('../22_12_31.log')
+      console.log('lineas gestionarArray: '+lineas)
+      lineas.forEach(line => {
+        this.labels.push(line[0])   // hora
+        this.potencia_consumida.push(line[1])   // potencia consumida
+        this.energia_consumida.push(line[2])   // energia consumida
+        this.energia_excedente.push(line[3])   // energia excedente
+        this.potencia_producida.push(line[4])   // potencia producida
+        this.energia_producida.push(line[5])   // energia producida
+        console.log('linea:'+line)
+      })
+    /*
+      for (let line in lineas) {
+        this.labels.push(line[0])   // hora
+        this.potencia_consumida.push(line[1])   // potencia consumida
+        this.energia_consumida.push(line[2])   // energia consumida
+        this.energia_excedente.push(line[3])   // energia excedente
+        this.potencia_producida.push(line[4])   // potencia producida
+        this.energia_producida.push(line[5])   // energia producida
+        // console.log(line)
+      }
+    */
   }
 
-
+ 
 
 ///// actualizar datos
 
@@ -116,6 +141,7 @@ const myChart = new Chart(ctx, {
     myChart.data.datasets[3].data = potencia_producida;
     myChart.data.datasets[4].data = energia_producida;
 
+    // console.log(potencia_consumida)
     // Actualizar la gráfica
     myChart.update();
   }
