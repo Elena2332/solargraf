@@ -102,7 +102,7 @@ var myChart = new Chart(ctx, {
 
   function gestionarArrays()
   {
-    leerFichero('../22_12_31.log')
+    leerFichero('22_12_31.log')
   }
 
  

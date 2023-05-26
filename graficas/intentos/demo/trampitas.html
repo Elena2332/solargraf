@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actualizar datos de una gráfica con Charts.js</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<div style="width:50%;">
+		<canvas id="myChart"></canvas>
+	</div>
+
+	<button onclick="actualizarDatos()">Actualizar datos</button>
+
+	<script>
+		// Datos iniciales para la gráfica
+		var datos = {
+			labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+			datasets: [{
+				label: 'Ventas Producto A',
+				data: [12, 19, 3, 5, 2, 3],
+				backgroundColor: 'rgba(255, 99, 132, 0.2)',
+				borderColor: 'rgba(255, 99, 132, 1)',
+				borderWidth: 1
+			},
+			{
+				label: 'Ventas Producto B',
+				data: [8, 4, 6, 9, 10, 2],
+				backgroundColor: 'rgba(54, 162, 235, 0.2)',
+				borderColor: 'rgba(54, 162, 235, 1)',
+				borderWidth: 1
+			},
+			{
+				label: 'Ventas Producto C',
+				data: [3, 7, 10, 6, 12, 5],
+				backgroundColor: 'rgba(255, 206, 86, 0.2)',
+				borderColor: 'rgba(255, 206, 86, 1)',
+				borderWidth: 1
+			}]
+		};
+
+		// Opciones para la gráfica
+		var opciones = {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
+					}
+				}]
+			}
+		};
+
+		// Crear gráfica
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: datos,
+			options: opciones
+		});
+
+
+		// Función para actualizar los datos de la gráfica
+		/*function actualizarDatos() {
+			// Generar nuevos datos de manera aleatoria
+			var nuevosDatos = {
+				datasets: [{
+					data: [
+						Math.floor(Math.random() * 20) + 1,
+						Math.floor(Math.random() * 20) + 1,
+						Math.floor(Math.random() * 20) + 1,
+						Math.floor(Math.random() * 20) + 1,
+						Math.floor(Math.random() * 20) + 1,
+						Math.floor(Math.random() * 20) + 1
+					]
+				}]
+			};
+
+			// Actualizar los datos de la gráfica
+			myChart.data.datasets.forEach((dataset) => {
+				dataset.data = nuevosDatos.datasets[0].data;
+			});
+
+
+
+			// Actualizar la gráfica
+			myChart.update();
+		}*/
+
+
+		// Función para actualizar los datos de las tres series
+		function actualizarDatos(series1, series2, series3) {
+			// Actualizar los datos de las tres series
+			myChart.data.datasets[0].data = series1;
+			myChart.data.datasets[1].data = series2;
+			myChart.data.datasets[2].data = series3;
+			// Actualizar la gráfica
+			myChart.update();
+		}
+
+
+	</script>
+</body>
+</html>

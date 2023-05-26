@@ -67,3 +67,29 @@ const myChart = new Chart(ctx, {
   {
     this.actualizarDatos(consumo,excedente,produccion)
   }
+
+
+  function leerFichero()
+  {
+    let lines   //fichero bruto
+    let len
+    let lin
+    fetch('../22_12_31.log')
+      .then(res => res.text())
+        .then(content => {
+          lines = content.split(/\r\n/);    // array, string lineas del fichero
+          len = lines.length
+          for(let i=2; i<len ; i++)
+          {
+            lin = lines[i].split(/\t/)    // array, partes de la linea
+            if(lin.length < 6)
+            {
+              lin[4] = '0'
+              lin[5] = '0'
+            }
+            console.log(lin)
+          }
+         
+      });
+  }
+  leerFichero()
